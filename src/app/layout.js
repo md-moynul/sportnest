@@ -2,6 +2,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { ToastContainer } from "react-toastify";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -27,8 +28,9 @@ export default function RootLayout({ children }) {
     >
       <body className="bg-background text-foreground">
         <Navbar/>
-        <main>
+        <main className="px-5 md:px-0">
           {children}
+            <ToastContainer />
         </main>
         <Footer />
       </body>

@@ -7,10 +7,10 @@ const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const links = <>
         <li>
-            <Link href="#">Features</Link>
+            <Link href="/">Home</Link>
         </li>
         <li>
-            <Link href="#">Pricing</Link>
+            <Link href="/add-facility">Add Facility</Link>
         </li>
     </>
     return (
