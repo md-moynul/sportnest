@@ -28,7 +28,7 @@ export default function RootLayout({ children }) {
     >
       <body className="bg-gray-50 dark:bg-background text-foreground">
         <Navbar/>
-        <main className="px-5 md:px-0">
+        <main className="">
           {children}
             <ToastContainer />
         </main>
