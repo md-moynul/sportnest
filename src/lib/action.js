@@ -10,7 +10,7 @@ export const addFacility = async(facility) =>{
     })
     const data =await res.json()
     if(data.insertedId){
-        toast.success(`${facility.facilityName} is added successful`)
+        toast.success(`${facility.name} is added successful`)
     }
     return data
 }

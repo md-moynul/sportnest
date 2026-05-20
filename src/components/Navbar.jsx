@@ -6,16 +6,13 @@ import Link from "next/link";
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const links = <>
-        <li>
-            <Link href="/">Home</Link>
-        </li>
-        <li>
-            <Link href="/add-facility">Add Facility</Link>
-        </li>
+        <li><Link href="/">Home</Link></li>
+        <li><Link href="/all-facility">All Facility</Link></li>
+        <li><Link href="/add-facility">Add Facility</Link></li>
     </>
     return (
-        <div>
-            <nav className="sticky top-0 z-40 w-full border-b border-separator bg-background/70 backdrop-blur-lg">
+       
+            <nav className="sticky top-0 z-40 w-full border-b border-separator dark:bg-gray-900 bg-background/70 backdrop-blur-lg">
                 <header className="flex h-18 items-center justify-between px-6 container mx-auto">
                     <div className="flex items-center gap-4">
                         <button
@@ -49,7 +46,9 @@ const Navbar = () => {
                         </button>
                         <div className="flex items-center gap-0.5 md:gap-2">
                             <Image className="w-8 md:w-10 h-8 md:h-10 " src={'/assets/logo.png'} alt='loge' width={50} height={50} />
-                            <p className="font-bold text-xl md:text-3xl text-sky-600"><span>Sport</span><span className="text-teal-600">Nest</span></p>
+                            <p className="font-bold text-xl md:text-3xl">
+                                <span className=" text-sky-600">Sport</span>
+                                <span className="text-teal-600">Nest</span></p>
                         </div>
                     </div>
                     <ul className="hidden items-center gap-4 md:flex">
@@ -67,7 +66,6 @@ const Navbar = () => {
                     </div>
                 )}
             </nav>
-        </div>
     );
 };
 

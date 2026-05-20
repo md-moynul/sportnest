@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
       data-theme="light"
       className={`${plusJakartaSans.className} light`}
     >
-      <body className="bg-background text-foreground">
+      <body className="bg-gray-50 dark:bg-background text-foreground">
         <Navbar/>
         <main className="px-5 md:px-0">
           {children}

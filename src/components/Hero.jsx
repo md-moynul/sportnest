@@ -19,7 +19,7 @@ const Hero = () => {
                     </div>
                     <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-white leading-[1.15]">
                         The modern standard for <br />
-                        <span className="text-transparent bg-clip-text bg-linear-to-r from-sky-400 to-teal-400">
+                        <span className=" text-sky-400 ">
                             sports facility management.
                         </span>
                     </h1>
@@ -30,7 +30,7 @@ const Hero = () => {
 
 
                     <div className="flex flex-col sm:flex-row items-center gap-4 mt-4 w-full sm:w-auto">
-                        <Button size="lg" className={'w-full sm:w-auto font-medium text-sm bg-sky-600 hover:bg-sky-800 text-white shadow-lg shadow-sky-600/20 px-8 rounded'}>
+                        <Button size="lg" className={'w-full sm:w-auto font-medium text-sm bg-teal-600 hover:bg-teal-800 text-white shadow-lg shadow-sky-600/20 px-8 rounded'}>
                             <Link
                                 href="/explore"
                                 className=""

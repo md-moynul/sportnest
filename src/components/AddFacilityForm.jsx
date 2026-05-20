@@ -10,47 +10,51 @@ export default function AddFacilityForm() {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
         const facility = Object.fromEntries(formData);
+        facility.owner_email = 'moynul@gmail.com'
+        // console.log(facility)
+        
         const data = await addFacility(facility)
      
     };
 
     return (
-        <Card className="p-5 max-w-3xl mx-auto">
+        <Card className="p-5 max-w-3xl mx-auto ">
             <Form className="grid grid-cols-1 md:grid-cols-2 gap-3 space-y-6" onSubmit={onSubmit}>
 
                 <TextField
+              
                     isRequired
-                    name="facilityName"
+                    name="name"
                     type="text"
 
                 >
                     <Label>Facility Name</Label>
-                    <Input placeholder="Enter facility name" />
+                    <Input   className={'dark:bg-[#5F5E5A]'} placeholder="Enter facility name" />
 
                 </TextField>
                 
                     <Select
-                        className="w-full"
+                        className="w-full "
                         isRequired
-                        name="type"
+                        name="facility_type"
                         placeholder="Select Facility Type"
                     >
                         <Label>Type</Label>
-                        <Select.Trigger>
+                        <Select.Trigger className={'dark:bg-[#5F5E5A]'}>
                             <Select.Value />
                             <Select.Indicator />
                         </Select.Trigger>
                         <Select.Popover>
-                            <ListBox>
-                                <ListBox.Item id="football" textValue="Football">
+                            <ListBox className="space-y-2">
+                                <ListBox.Item   className={'dark:bg-[#5F5E5A]'}  id="Football" textValue="Football">
                                     Football
                                     <ListBox.ItemIndicator />
                                 </ListBox.Item>
-                                <ListBox.Item id="cricket" textValue="Cricket">
+                                <ListBox.Item className={'dark:bg-[#5F5E5A]'}  id="Cricket" textValue="Cricket">
                                     Cricket
                                     <ListBox.ItemIndicator />
                                 </ListBox.Item>
-                                <ListBox.Item id="Basketball" textValue="basketball">
+                                <ListBox.Item className={'dark:bg-[#5F5E5A]'}  id="Basketball" textValue="basketball">
                                     Basketball
                                     <ListBox.ItemIndicator />
                                 </ListBox.Item>
@@ -60,12 +64,12 @@ export default function AddFacilityForm() {
                     </Select>
                     <TextField
                         isRequired
-                        name="price"
+                        name="price_per_hour"
                         type="number"
 
                     >
                         <Label>Price (Per Hour)</Label>
-                        <Input placeholder="Enter Facility price" />
+                        <Input className={'dark:bg-[#5F5E5A]'}  placeholder="Enter Facility price" />
 
                     </TextField>
                 
@@ -75,7 +79,7 @@ export default function AddFacilityForm() {
 
                     >
                         <Label>Location</Label>
-                        <Input placeholder="Enter location" />
+                        <Input className={'dark:bg-[#5F5E5A]'}  placeholder="Enter location" />
 
                     </TextField>
                     <TextField
@@ -84,7 +88,7 @@ export default function AddFacilityForm() {
                         type="number"
                     >
                         <Label>Capacity</Label>
-                        <Input placeholder="Enter Capacity" />
+                        <Input className={'dark:bg-[#5F5E5A]'}  placeholder="Enter Capacity" />
 
                     </TextField>
                     <TextField
@@ -93,16 +97,16 @@ export default function AddFacilityForm() {
                         type="url"
                     >
                         <Label>Image</Label>
-                        <Input placeholder="Enter image url" />
+                        <Input className={'dark:bg-[#5F5E5A]'}  placeholder="Enter image url" />
 
                     </TextField>
                     <TextField
                         isRequired
-                        name="capacity"
+                        name="available_slots"
                         className={'md:col-span-2'}
                     >
                         <Label>Available Time Slots</Label>
-                        <Input placeholder="e.g. 10:00 AM - 12:00 AM" />
+                        <Input className={'dark:bg-[#5F5E5A]'}  placeholder="e.g. 10:00 AM - 12:00 AM" />
 
                     </TextField>
                      <TextField
@@ -111,16 +115,16 @@ export default function AddFacilityForm() {
                         className={'md:col-span-2'}
                     >
                         <Label>Description</Label>
-                        <TextArea className={'h-25 '} placeholder="Enter description" />
+                        <TextArea className={'h-25 dark:bg-[#5F5E5A]'} placeholder="Enter description" />
 
                     </TextField>
                 
                
-                    <Button size="lg" className={'w-full bg-sky-600 hover:bg-teal-400 text-white'} type="submit">
+                    <Button size="lg" className={'w-full bg-sky-600 hover:bg-teal-600 text-white'} type="submit">
                         
                        <Check /> Add Facility
                     </Button>
-                    <Button size="lg" className={'w-full bg-slate-700 border-slate-800  hover:bg-teal-400'} type="reset">
+                    <Button size="lg" className={'w-full bg-slate-700 border-slate-800  hover:bg-teal-600'} type="reset">
                      <ArrowRotateRight /> Reset
                     </Button>
 
