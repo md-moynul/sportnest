@@ -10,7 +10,8 @@ export default function AddFacilityForm() {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
         const facility = Object.fromEntries(formData);
-        facility.owner_email = 'moynul@gmail.com'
+        facility.owner_email = 'moynul@gmail.com';
+        facility.booking_count = 0;
         // console.log(facility)
         
         const data = await addFacility(facility)
