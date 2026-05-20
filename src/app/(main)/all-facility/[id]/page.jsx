@@ -1,3 +1,5 @@
+
+import FacilityBookingCard from "@/components/FacilityBookingCard";
 import Love from "@/components/Love";
 import { getFacilityById } from "@/lib/data";
 import { ArrowRight, Check, MapPin } from "@gravity-ui/icons";
@@ -11,8 +13,8 @@ const DetailsPage = async ({ params }) => {
     const facility = await getFacilityById(id)
     console.log(facility);
 
-    const { _id, name, image, facility_type, price_per_hour, location, available_slots, capacity, owner_email, description } = facility
-
+    const {  name, image, facility_type, price_per_hour, location, available_slots, capacity, owner_email, description } = facility
+  
     return (
         <div className="container  mx-auto py-10 md:py-15 space-y-10">
 
@@ -51,30 +53,7 @@ const DetailsPage = async ({ params }) => {
                 </div>
                 <Card className="mt-5 mr-5 flex space-y-5 justify-center">
                     <div>
-                        <p className="text-center font-semibold text-xl text-sky-600">Book {name}</p>
-                        <form className="space-y-5">
-                            <TextField
-                                name="bookingDate"
-                                className={'md:col-span-2'}
-                                type="date"
-                                isRequired>
-                                <Label>Date</Label>
-                                <Input type="date" className="rounded-2xl" />
-                                <FieldError />
-                            </TextField>
-                            <TextField
-                                isRequired
-                                name="time_slot"
-                                className={'md:col-span-2'}>
-                                <Label>Time Slots</Label>
-                                <Input className={'dark:bg-[#5F5E5A]'} placeholder="e.g. 10:00 AM - 12:00 AM" />
-
-                            </TextField>
-                         <Button size="lg" className={'w-full bg-sky-600 hover:bg-teal-600 text-white'} type="submit">
-                        
-                       <Check />Book
-                    </Button>
-                        </form>
+                       <FacilityBookingCard facility={facility} />
                     </div>
                 </Card>
                 <div className="p-5 col-span-1 md:col-span-3">

@@ -14,3 +14,20 @@ export const addFacility = async(facility) =>{
     }
     return data
 }
+export const bookFacility = async(bookingData) =>{
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/bookings` ,{
+        method :'POST',
+        headers : {
+            'content-type': 'application/json'
+        },
+        body : JSON.stringify(bookingData)
+    })
+    const data =await res.json()
+    console.log(data);
+    
+    if(data.insertedId){
+        toast.success(`${bookingData.facility_name} is successfully booked`)
+    }
+    
+    return data
+}

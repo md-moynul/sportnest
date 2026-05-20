@@ -8,15 +8,15 @@ import UserAvatarModal from "./UserAvatarModal";
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [islogin, setLogin] = useState(true)
+    const linksData =[
+        { href: '/', name: "Home" },
+        { href: '/all-facility', name: "All Facility" },
+        { href: '/add-facility', name: "Add Facility" },
+    ]
     // TODO : not get session wait for support
     const { data: session, isPending } = authClient.useSession();
     console.log(session, isPending);
 
-    const links = <>
-        <li><Link href="/">Home</Link></li>
-        <li><Link href="/all-facility">All Facility</Link></li>
-        <li><Link href="/add-facility">Add Facility</Link></li>
-    </>
     return (
 
         <nav className="sticky top-0 z-40 w-full border-b border-separator dark:bg-gray-900 bg-background/70 backdrop-blur-lg">
@@ -59,11 +59,11 @@ const Navbar = () => {
                     </div>
                 </div>
                 <ul className="hidden items-center gap-4 md:flex">
-                    {links}
+                    {linksData.map((d,i) => <li key={i}><Link href={d.href}>{d.name}</Link></li>)}
                 </ul>
                 <div>
-                    {islogin ? 
-                    <UserAvatarModal />:
+                    {islogin ?
+                        <UserAvatarModal linksData={linksData} /> :
                         <Link href={'/login'}><Button variant="primary" className={'rounded-none bg-sky-600'}>login</Button></Link>
                     }
                 </div>
@@ -71,7 +71,7 @@ const Navbar = () => {
             {isMenuOpen && (
                 <div className="border-t border-separator md:hidden">
                     <ul className="flex flex-col gap-2 p-4">
-                        {links}
+                       {linksData.map((d,i) => <li key={i}><Link href={d.href}>{d.name}</Link></li>)}
                     </ul>
                 </div>
             )}

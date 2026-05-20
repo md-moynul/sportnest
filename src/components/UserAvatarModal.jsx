@@ -3,7 +3,7 @@ import { SquarePlus } from "@gravity-ui/icons";
 import { Avatar, Button, Dropdown, Kbd, Label } from "@heroui/react";
 import Link from "next/link";
 
-const UserAvatarModal = () => {
+const UserAvatarModal = ({linksData}) => {
   return (
     <Dropdown>
       <Button className={'p-0'} aria-label="Menu" variant="secondary">
@@ -23,24 +23,21 @@ const UserAvatarModal = () => {
           <p>mmmdmoynulislam@gmail.com</p>
           <div className="text-center">
             <Link href={'/profile'}>
-              <Button size="lg" className={'rounded '}>View profile</Button>
+              <Button size="lg" className={'rounded  bg-sky-600 hover:bg-teal-600 text-white'}>View profile</Button>
             </Link>
 
           </div>
         </div>
 
         <Dropdown.Menu >
-          <Dropdown.Item >
-
-            <Label>New file</Label>
-            <Kbd className="ms-auto" slot="keyboard" variant="light">
-
-            </Kbd>
-          </Dropdown.Item>
+          {linksData.map((d,i) =><Dropdown.Item key={i}>
+            <Link href={d.href}>{d.name}</Link>
+          </Dropdown.Item>)}
+          
 
         </Dropdown.Menu>
         <div className="p-4 ">
-          <Button className={'w-full rounded-none'}>Logout</Button>
+          <Button className={'w-full rounded-none  bg-sky-600 hover:bg-teal-600 text-white'}>Logout</Button>
         </div>
 
       </Dropdown.Popover>
