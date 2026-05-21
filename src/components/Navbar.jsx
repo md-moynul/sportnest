@@ -12,6 +12,7 @@ const Navbar = () => {
         { href: '/', name: "Home" },
         { href: '/all-facility', name: "All Facility" },
         { href: '/add-facility', name: "Add Facility" },
+        { href: '/my-bookings', name: "My Bookings" },
     ]
     // TODO : not get session wait for support
     const { data: session, isPending } = authClient.useSession();
@@ -58,7 +59,7 @@ const Navbar = () => {
                             <span className="text-teal-600">Nest</span></p>
                     </div>
                 </div>
-                <ul className="hidden items-center gap-4 md:flex">
+                <ul className="hidden items-center gap-4 md:flex font-bold">
                     {linksData.map((d,i) => <li key={i}><Link href={d.href}>{d.name}</Link></li>)}
                 </ul>
                 <div>
