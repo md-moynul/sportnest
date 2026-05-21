@@ -5,7 +5,7 @@ import CancelBooking from './CancelBooking';
 import Link from 'next/link';
 import Image from 'next/image';
 const BookingCard = ({ booking }) => {
-    console.log(booking);
+    // console.log(booking);
 
     const { _id, facility_image, facility_name, total_price, bookingDate, time_slot, hours } = booking;
     const date = new Date(bookingDate).toLocaleDateString()

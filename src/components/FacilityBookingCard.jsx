@@ -1,22 +1,24 @@
 'use client'
 
 import { bookFacility } from "@/lib/action";
+import { authClient } from "@/lib/auth-client";
 import { Button, FieldError, Input, Label, TextField } from "@heroui/react";
 import { Check } from "lucide-react";
 
 
-const FacilityBookingCard = ({facility}) => {
-    const onSubmit = async(e) => {
+const FacilityBookingCard = ({ facility }) => {
+    const { data: session, } = authClient.useSession()
+    const onSubmit = async (e) => {
         e.preventDefault();
         const fromData = new FormData(e.currentTarget);
         const bookingData = Object.fromEntries(fromData.entries())
         bookingData.total_price = facility.price_per_hour * bookingData.hours;
-        bookingData.facility_id = facility._id 
-        bookingData.facility_name = facility.name 
-        bookingData.facility_image = facility.image 
-        // TODO : user email will added
-        bookingData.email = 'mmmdmoynulilsam@gmail.com'
-        bookingData.userId = '6a056e101aebfdb8e57d3e5a'
+        bookingData.facility_id = facility._id;
+        bookingData.facility_name = facility.name;
+        bookingData.facility_image = facility.image;
+        bookingData.email = session?.user?.email;
+        bookingData.userId = session?.user?.id;
+        bookingData.name = session?.user?.name;
         console.log(bookingData);
         const data = await bookFacility(bookingData)
     }

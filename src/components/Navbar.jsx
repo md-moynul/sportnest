@@ -7,16 +7,21 @@ import { authClient } from "@/lib/auth-client";
 import UserAvatarModal from "./UserAvatarModal";
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [islogin, setLogin] = useState(true)
     const linksData =[
         { href: '/', name: "Home" },
         { href: '/all-facility', name: "All Facility" },
-        { href: '/add-facility', name: "Add Facility" },
         { href: '/my-bookings', name: "My Bookings" },
+        { href: '/add-facility', name: "Add Facility" },
     ]
     // TODO : not get session wait for support
     const { data: session, isPending } = authClient.useSession();
-    console.log(session, isPending);
+  if(isPending){
+    return
+  }
+    const user = session?.user
+//    console.log(user);
+   
+    
 
     return (
 
@@ -63,8 +68,8 @@ const Navbar = () => {
                     {linksData.map((d,i) => <li key={i}><Link href={d.href}>{d.name}</Link></li>)}
                 </ul>
                 <div>
-                    {islogin ?
-                        <UserAvatarModal linksData={linksData} /> :
+                    {user ?
+                        <UserAvatarModal user={user} linksData={linksData} /> :
                         <Link href={'/login'}><Button variant="primary" className={'rounded-none bg-sky-600'}>login</Button></Link>
                     }
                 </div>
