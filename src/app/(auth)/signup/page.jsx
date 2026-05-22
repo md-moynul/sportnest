@@ -116,7 +116,7 @@ export default function SignupPage() {
                             <Input placeholder="Enter your password" />
                             <span onClick={() => setIsVisible(!isVisible)} className="cursor-pointer absolute top-8 right-3">{isVisible ? <FaEye size={22} /> : <FaEyeSlash size={23} />}</span>
 
-                            <Description>Must be at least 8 characters with 1 uppercase and 1 number</Description>
+                            <Description>Must be at least 6 characters with 1 uppercase and 1 number</Description>
                             <FieldError />
                         </TextField>
                         <div className="flex gap-3 mt-1">
