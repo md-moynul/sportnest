@@ -38,7 +38,7 @@ const UserAvatarModal = ({ linksData, user }) => {
           <p>{email}</p>
           <div className="text-center">
             <Link href={'/profile'}>
-              <Button size="lg" className={'rounded  bg-sky-600 hover:bg-teal-600 text-white'}>View profile</Button>
+              <Button size="lg" className={'rounded bg-teal-600 hover:bg-teal-800 text-white'}>View profile</Button>
             </Link>
 
           </div>
@@ -52,7 +52,7 @@ const UserAvatarModal = ({ linksData, user }) => {
 
         </Dropdown.Menu>
         <div className="p-4 ">
-          <Button onClick={logoutUser} className={'w-full rounded-none  bg-sky-600 hover:bg-teal-600 text-white'}>Logout</Button>
+          <Button variant="danger" onClick={logoutUser} className={'w-full rounded-none'}>Logout</Button>
         </div>
 
       </Dropdown.Popover>

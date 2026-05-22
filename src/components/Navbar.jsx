@@ -7,21 +7,26 @@ import { authClient } from "@/lib/auth-client";
 import UserAvatarModal from "./UserAvatarModal";
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const linksData =[
+    const linksData = [
         { href: '/', name: "Home" },
         { href: '/all-facility', name: "All Facility" },
-        { href: '/my-bookings', name: "My Bookings" },
-        { href: '/add-facility', name: "Add Facility" },
     ]
     // TODO : not get session wait for support
     const { data: session, isPending } = authClient.useSession();
-  if(isPending){
-    return
-  }
+    if (isPending) {
+        return
+    }
     const user = session?.user
-//    console.log(user);
-   
-    
+    if (user) {
+        linksData.push(
+            { href: '/my-bookings', name: "My Bookings" },
+            { href: '/manage-facilities', name: "Manage Facilities " },
+            { href: '/add-facility', name: "Add Facility" },
+        )
+    }
+    //    console.log(user);
+
+
 
     return (
 
@@ -64,8 +69,8 @@ const Navbar = () => {
                             <span className="text-teal-600">Nest</span></p>
                     </div>
                 </div>
-                <ul className="hidden items-center gap-4 md:flex font-bold">
-                    {linksData.map((d,i) => <li key={i}><Link href={d.href}>{d.name}</Link></li>)}
+                <ul className="hidden items-center gap-6 md:flex font-bold">
+                    {linksData.map((d, i) => <li key={i}><Link href={d.href}>{d.name}</Link></li>)}
                 </ul>
                 <div>
                     {user ?
@@ -77,7 +82,7 @@ const Navbar = () => {
             {isMenuOpen && (
                 <div className="border-t border-separator md:hidden">
                     <ul className="flex flex-col gap-2 p-4">
-                       {linksData.map((d,i) => <li key={i}><Link href={d.href}>{d.name}</Link></li>)}
+                        {linksData.map((d, i) => <li key={i}><Link href={d.href}>{d.name}</Link></li>)}
                     </ul>
                 </div>
             )}

@@ -14,6 +14,21 @@ export const addFacility = async (facility) => {
     }
     return data
 }
+export const deleteFacility = async (facility) => {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/facilities/${id}`, {
+        method: 'DELETE',
+        headers: {
+            'content-type': 'application/json'
+        }
+    }
+    )
+    const data = await res.json();
+    if (data.deletedCount > 0) {
+        toast.warning(`${facility.name} is Deleted`)
+         window.location.reload()
+    }
+
+}
 export const bookFacility = async (bookingData) => {
     const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/bookings`, {
         method: 'POST',
