@@ -5,6 +5,7 @@ import { Avatar, Button, Dropdown, Kbd, Label } from "@heroui/react";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { toast } from "react-toastify";
+import NavLinks from "./NavLinks";
 
 const UserAvatarModal = ({ linksData, user }) => {
   const { name, image, email } = user
@@ -46,7 +47,7 @@ const UserAvatarModal = ({ linksData, user }) => {
 
         <Dropdown.Menu >
           {linksData.map((d, i) => <Dropdown.Item key={i}>
-            <Link href={d.href}>{d.name}</Link>
+             <NavLinks href={d.href}>{d.name}</NavLinks>
           </Dropdown.Item>)}
 
 

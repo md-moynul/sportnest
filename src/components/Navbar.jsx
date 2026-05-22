@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { authClient } from "@/lib/auth-client";
 import UserAvatarModal from "./UserAvatarModal";
+import NavLinks from "./NavLinks";
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const linksData = [
@@ -21,7 +22,7 @@ const Navbar = () => {
         linksData.push(
             { href: '/my-bookings', name: "My Bookings" },
             { href: '/manage-facilities', name: "Manage Facilities " },
-            { href: '/add-facility', name: "Add Facility" },
+            { href: '/add-facility', name: "Add Facilities" },
         )
     }
     //    console.log(session);
@@ -70,19 +71,19 @@ const Navbar = () => {
                     </div>
                 </div>
                 <ul className="hidden items-center gap-6 md:flex font-bold">
-                    {linksData.map((d, i) => <li key={i}><Link href={d.href}>{d.name}</Link></li>)}
+                    {linksData.map((d, i) => <li key={i}><NavLinks href={d.href}>{d.name}</NavLinks></li>)}
                 </ul>
                 <div>
                     {user ?
                         <UserAvatarModal user={user} linksData={linksData} /> :
-                        <Link href={'/login'}><Button variant="primary" className={'rounded-none bg-sky-600'}>login</Button></Link>
+                        <Link href={'/login'}><Button variant="primary" className={'rounded-none bg-sky-600'}>Login</Button></Link>
                     }
                 </div>
             </header>
             {isMenuOpen && (
                 <div className="border-t border-separator md:hidden">
                     <ul className="flex flex-col gap-2 p-4">
-                        {linksData.map((d, i) => <li key={i}><Link href={d.href}>{d.name}</Link></li>)}
+                        {linksData.map((d, i) => <li key={i}><NavLinks href={d.href}>{d.name}</NavLinks></li>)}
                     </ul>
                 </div>
             )}

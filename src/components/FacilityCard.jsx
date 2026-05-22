@@ -21,11 +21,11 @@ const FacilityCard = ({ facility }) => {
             <div className="px-4 space-y-3">
                 <p className="text-3xl text-sky-600 font-semibold">{name}</p>
                 <div className="flex justify-between">
-                    <p>Price</p>
+                    <p className="flex gap-1 items-center"><MapPin/> {location}</p>
                     <p><span className="text-2xl font-bold text-sky-600">${price_per_hour}</span>/h</p>
                 </div>
-                <p className="flex gap-1 items-center"><MapPin/> {location}</p>
-                <Chip className="bg-green-100 text-green-700 font-bold " size="lg">Booked people : {booking_count ? booking_count :0}</Chip>
+               
+                <Chip className="bg-green-100 text-green-700 font-bold " size="lg">Total Bookings:{booking_count }</Chip>
                 <Link href={`/all-facility/${_id}`}><Button className={'w-full flex items-center bg-teal-600 hover:bg-teal-800 '}>Book Now <ArrowRight/></Button></Link>
             </div>
         </Card>
