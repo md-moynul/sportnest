@@ -24,9 +24,9 @@ export default function RootLayout({ children }) {
     <html
       lang="en"
       data-theme="light"
-      className={`${plusJakartaSans.className} light`}
+      className={`${plusJakartaSans.className} light scroll-smooth`}
     >
-      <body className="bg-gray-50 dark:bg-background text-foreground">
+      <body className="bg-sky-50 dark:bg-background text-foreground">
         <Navbar/>
         <main className="">
           {children}

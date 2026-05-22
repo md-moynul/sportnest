@@ -10,7 +10,10 @@ export default function Home() {
       <Hero/>
       <FeaturedFacilities />
       <WhyChooseUs />
-      <Reviews />
+      <div id="reviews">
+         <Reviews/>
+      </div>
+     
       
     </div>
   );

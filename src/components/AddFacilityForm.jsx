@@ -59,8 +59,16 @@ export default function AddFacilityForm() {
                                 Cricket
                                 <ListBox.ItemIndicator />
                             </ListBox.Item>
-                            <ListBox.Item className={'dark:bg-[#5F5E5A]'} id="Basketball" textValue="basketball">
+                            <ListBox.Item className={'dark:bg-[#5F5E5A]'} id="Basketball" textValue="Basketball">
                                 Basketball
+                                <ListBox.ItemIndicator />
+                            </ListBox.Item>
+                            <ListBox.Item className={'dark:bg-[#5F5E5A]'} id="Badminton" textValue="Badminton">
+                                Badminton
+                                <ListBox.ItemIndicator />
+                            </ListBox.Item>
+                            <ListBox.Item className={'dark:bg-[#5F5E5A]'} id="Hockey" textValue="Hockey">
+                                Hockey
                                 <ListBox.ItemIndicator />
                             </ListBox.Item>
 

@@ -32,7 +32,7 @@ const Hero = () => {
                     <div className="flex flex-col sm:flex-row items-center gap-4 mt-4 w-full sm:w-auto">
                         <Button size="lg" className={'w-full sm:w-auto font-medium text-sm bg-teal-600 hover:bg-teal-800 text-white shadow-lg shadow-sky-600/20 px-8 rounded'}>
                             <Link
-                                href="/explore"
+                               href="/all-facility"
                                 className=""
                             >
                                 Explore Facilities
@@ -41,7 +41,6 @@ const Hero = () => {
                         <Button size="lg" className={'w-full border sm:w-auto font-medium bg-slate-700 border-slate-800 text-slate-300 hover:text-teal-400 hover:border-teal-500 rounded'}>
                             <Link
                                 href="#reviews"
-                                className=""
                             >
                                 Reviews
                             </Link>
