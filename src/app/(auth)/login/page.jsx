@@ -17,6 +17,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { authClient } from "@/lib/auth-client";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
+import LoginWith from "@/components/LoginWith";
 
 const LoginPage = () => {
     const [isVisible, setIsVisible] = useState(false)
@@ -48,7 +49,7 @@ const LoginPage = () => {
                         Enter your credentials below to access your dashboard, manage your facility, and view your upcoming schedule
                     </p>
                 </div>
-                <div className="p-5">
+                <div className="p-5 space-y-4">
 
                     <Form className="flex min-w-xs flex-col gap-4 " onSubmit={onSubmit}>
 
@@ -120,6 +121,7 @@ const LoginPage = () => {
                             </Link>
                         </p>
                     </div>
+                    <LoginWith />
                 </div>
 
             </Card>

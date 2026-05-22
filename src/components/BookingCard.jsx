@@ -11,7 +11,7 @@ const BookingCard = ({ booking }) => {
     const date = new Date(bookingDate).toLocaleDateString()
 
     return (
-        <Card className='p-0 overflow-hidden max-w-4xl mx-auto'>
+        <Card className='p-0 overflow-hidden max-w-5xl mx-auto'>
             <div className='grid grid-cols-1 md:grid-cols-12 gap-0 md:gap-4'>
 
 

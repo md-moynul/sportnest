@@ -17,14 +17,14 @@ const Navbar = () => {
         return
     }
     const user = session?.user
-    if (user) {
+    if (user ) {
         linksData.push(
             { href: '/my-bookings', name: "My Bookings" },
             { href: '/manage-facilities', name: "Manage Facilities " },
             { href: '/add-facility', name: "Add Facility" },
         )
     }
-    //    console.log(user);
+    //    console.log(session);
 
 
 

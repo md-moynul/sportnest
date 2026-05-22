@@ -15,16 +15,33 @@ export const addFacility = async (facility) => {
     return data
 }
 export const deleteFacility = async (facility) => {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/facilities/${id}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/facilities/${facility._id}`, {
         method: 'DELETE',
         headers: {
-            'content-type': 'application/json'
-        }
+            'content-type': 'application/json',
+        },
+        
     }
     )
     const data = await res.json();
     if (data.deletedCount > 0) {
         toast.warning(`${facility.name} is Deleted`)
+         window.location.reload()
+    }
+
+}
+export const updateFacility = async (facility,id) => {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/facilities/${id}`, {
+        method: 'PATCH',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(facility)
+    }
+    )
+    const data = await res.json();
+    if (data.modifiedCount  > 0) {
+        toast.warning(`${facility.name} is Updated`)
          window.location.reload()
     }
 

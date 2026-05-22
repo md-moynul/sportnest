@@ -11,7 +11,7 @@ const DetailsPage = async ({ params }) => {
     const { id } = await params
 
     const facility = await getFacilityById(id)
-    console.log(facility);
+    // console.log(facility);
 
     const {  name, image, facility_type, price_per_hour, location, available_slots, capacity, owner_email, description } = facility
   
@@ -45,7 +45,7 @@ const DetailsPage = async ({ params }) => {
                         <p className="flex gap-1 items-center"><MapPin /> {location}</p>
                         <p>Type : <span className="text-xl font-bold">{facility_type}</span></p>
                         <p>Available : <span className="text-success font-semibold">{available_slots}</span></p>
-                        <p>Capacity : <span className="font-semibold">{capacity}</span> Pe</p>
+                        <p>Capacity : <span className="font-semibold">{capacity}</span> People</p>
                         <p>Owner : {owner_email}</p>
                     </div>
 

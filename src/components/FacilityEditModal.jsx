@@ -1,14 +1,17 @@
 "use client";
 
+import { updateFacility } from "@/lib/action";
 import { ArrowRotateRight, Envelope, Pencil } from "@gravity-ui/icons";
 import { Button, Form, Input, Label, Modal, Surface, TextField, Select, ListBox, TextArea } from "@heroui/react";
 import { Check } from "lucide-react";
 
 export default function FacilityEditModal({ facility }) {
-    const onSubmit = (e) => {
+    const onSubmit = async(e) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
         const facilityEditedData = Object.fromEntries(formData);
+        await updateFacility(facilityEditedData , facility._id)
+        
     }
     return (
         <Modal>
