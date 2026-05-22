@@ -1,6 +1,6 @@
 'use client'
 import { useState } from "react";
-import { Avatar, Button } from "@heroui/react";
+import { Avatar, Button, Spinner } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
 import { authClient } from "@/lib/auth-client";
@@ -14,9 +14,7 @@ const Navbar = () => {
     ]
     // TODO : not get session wait for support
     const { data: session, isPending } = authClient.useSession();
-    if (isPending) {
-        return
-    }
+   
     const user = session?.user
     if (user ) {
         linksData.push(
@@ -74,7 +72,7 @@ const Navbar = () => {
                     {linksData.map((d, i) => <li key={i}><NavLinks href={d.href}>{d.name}</NavLinks></li>)}
                 </ul>
                 <div>
-                    {user ?
+                    {isPending ? <Spinner/> :user ?
                         <UserAvatarModal user={user} linksData={linksData} /> :
                         <Link href={'/login'}><Button variant="primary" className={'rounded-none bg-sky-600'}>Login</Button></Link>
                     }

@@ -49,11 +49,11 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <section className="bg-white dark:bg-zinc-950 py-20 px-6 transition-colors">
+    <section className=" py-20 px-6 transition-colors">
       <div className="max-w-7xl mx-auto">
         
         {/* Section Header */}
-        <div className="max-w-3xl mb-16">
+        <div className="max-w-3xl mb-16 text-center mx-auto">
           <span className="text-teal-600 dark:text-teal-400 font-bold text-sm tracking-wider uppercase bg-teal-50 dark:bg-teal-900/20 px-3 py-1 rounded-full">
             Why SportNest?
           </span>
