@@ -5,6 +5,10 @@ export const getAllFacility = async () => {
     const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/facilities`)
     return res.json()
 }
+export const getFeaturedFacility = async () => {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/featured`)
+    return res.json()
+}
 export const getFacilityById = async (id) => {
     const { token } = await auth.api.getToken({
         headers: await headers()

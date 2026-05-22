@@ -4,6 +4,7 @@ import { updateFacility } from "@/lib/action";
 import { ArrowRotateRight, Envelope, Pencil } from "@gravity-ui/icons";
 import { Button, Form, Input, Label, Modal, Surface, TextField, Select, ListBox, TextArea } from "@heroui/react";
 import { Check } from "lucide-react";
+import { FaRegEdit } from "react-icons/fa";
 
 export default function FacilityEditModal({ facility }) {
     const onSubmit = async(e) => {
@@ -22,9 +23,9 @@ export default function FacilityEditModal({ facility }) {
                         <Modal.CloseTrigger />
                         <Modal.Header>
                             <Modal.Icon className="bg-accent-soft text-accent-soft-foreground">
-                                <Envelope className="size-5" />
+                                <FaRegEdit className="size-5" />
                             </Modal.Icon>
-                            <Modal.Heading>Contact Us</Modal.Heading>
+                          
 
                         </Modal.Header>
                         <Modal.Body className="p-6">

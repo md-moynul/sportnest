@@ -29,7 +29,7 @@ const UserAvatarModal = ({ linksData, user }) => {
         </Avatar>
       </Button>
       <Dropdown.Popover className={' bg-background/70 backdrop-blur-lg border-2 border-teal-500 mr-3'}>
-        <div className="p-8 pb-0 space-y-4">
+        <div className="p-8 pb-0 space-y-4 min-w-55">
           <Avatar className="mx-auto w-15 h-15 rounded-full" >
             <Avatar.Image alt={name} src={image} className="" loading="eager"/>
 

@@ -15,7 +15,7 @@ const BookingCard = ({ booking }) => {
             <div className='grid grid-cols-1 md:grid-cols-12 gap-0 md:gap-4'>
 
 
-                <div className='relative w-full h-60 md:h-auto md:col-span-3 md:aspect-square'>
+                <div className='relative w-full h-60 md:h-full md:col-span-3 md:aspect-square'>
                     <Image
                         src={facility_image}
                         alt={facility_name}

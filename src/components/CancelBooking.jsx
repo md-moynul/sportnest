@@ -7,7 +7,7 @@ import { TrashBin } from "@gravity-ui/icons";
 import { AlertDialog, Button } from "@heroui/react";
 
 
-const CancelBooking = ({ booking }) => {
+const CancelBooking = ({ booking }) => {   
     return (
         <AlertDialog>
             <Button variant='outline' className={'rounded-none text-red-500 border-red-500'}><TrashBin />Cancel</Button>
@@ -21,7 +21,7 @@ const CancelBooking = ({ booking }) => {
                         </AlertDialog.Header>
                         <AlertDialog.Body>
                             <p>
-                                This will permanently delete <strong>{booking.facilities_name}</strong> and all of its
+                                This will permanently delete <strong>{booking.facility_name}</strong> and all of its
                                 data. This action cannot be undone.
                             </p>
                         </AlertDialog.Body>
