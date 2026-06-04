@@ -6,7 +6,9 @@ export const getAllFacility = async () => {
     return res.json()
 }
 export const getFeaturedFacility = async () => {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/featured`)
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/featured`,{
+        cache:'no-store'
+    })
     return res.json()
 }
 export const getFacilityById = async (id) => {
